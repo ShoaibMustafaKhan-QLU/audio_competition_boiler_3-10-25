@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Voice Chat Clone</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #121212;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      height: 100vh;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      margin: 10px 0 20px;
+    }
+
+    #bubble {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #00c6ff, #0072ff);
+      animation: pulseIdle 2s infinite;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    @keyframes pulseIdle {
+      0% { transform: scale(1); opacity: 0.7; }
+      50% { transform: scale(1.1); opacity: 1; }
+      100% { transform: scale(1); opacity: 0.7; }
+    }
+
+    @keyframes pulseTalking {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.3); }
+      100% { transform: scale(1); }
+    }
+
+    .talking {
+      animation: pulseTalking 0.5s infinite;
+      background: linear-gradient(145deg, #ff512f, #dd2476);
+    }
+
+    .ai-speaking {
+      animation: pulseTalking 0.8s infinite;
+      background: linear-gradient(145deg, #12c2e9, #c471ed, #f64f59);
+    }
+
+    #status {
+      margin-bottom: 10px;
+      font-style: italic;
+    }
+
+    /* Chat transcript */
+    #chat {
+      width: 100%;
+      max-width: 500px;
+      height: 150px;          /* smaller fixed height */
+      background: #1e1e1e;
+      border-radius: 12px;
+      padding: 10px;
+      overflow-y: auto;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 15px;
+    }
+
+    .message {
+      margin: 6px 0;
+      padding: 8px 12px;
+      border-radius: 10px;
+      line-height: 1.4;
+      max-width: 80%;
+      word-wrap: break-word;
+      font-size: 14px;
+    }
+
+    .user {
+      background: #0072ff;
+      align-self: flex-end;
+      margin-left: auto;
+    }
+
+    .assistant {
+      background: #333;
+      align-self: flex-start;
+      margin-right: auto;
+    }
+
+    /* Audio visualizers */
+    #visuals {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 500px;
+      margin-top: 10px;
+    }
+    canvas {
+      background: #1e1e1e;
+      border-radius: 8px;
+      flex: 1;
+      height: 100px;
+      margin: 0 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎙️ Voice Chat Clone</h1>
+  <div id="bubble"></div>
+  <p id="status">Idle</p>
+  <div id="chat"></div>
+
+  <!-- visualizers -->
+  <div id="visuals">
+    <canvas id="waveform"></canvas>
+    <canvas id="spectrogram"></canvas>
+    <canvas id="fft"></canvas>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
