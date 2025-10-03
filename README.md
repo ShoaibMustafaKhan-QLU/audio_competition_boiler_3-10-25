@@ -1,6 +1,4 @@
-Here’s a clean `README.md` for your project, written in a straightforward style without emojis:
 
----
 
 # Voice Chat Clone
 
@@ -116,6 +114,4 @@ uvicorn app:app --reload
 * Option to switch between multiple cloned voices mid-conversation.
 * Collapsible transcript panel to maximize visualization space.
 
----
 
-Do you want me to also include **example screenshots / diagrams** of the UI and pipeline in this README, or should we keep it strictly text-based for now?
