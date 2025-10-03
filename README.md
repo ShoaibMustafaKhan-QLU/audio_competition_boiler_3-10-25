@@ -4,6 +4,9 @@ Here’s a clean `README.md` for your project, written in a straightforward styl
 
 # Voice Chat Clone
 
+![System Flow](flow.png)
+
+
 This project implements a voice-based conversational assistant that integrates real-time speech recognition, large language model responses, and voice cloning. The system allows continuous, natural interaction between a user and an AI assistant with automatic speech detection and animated frontend visualizations.
 
 ## Features
